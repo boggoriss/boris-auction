@@ -1,0 +1,41 @@
+extends base
+
+block content
+    style
+        include ../public/stylesheets/modal.css
+        include ../public/stylesheets/styles.css
+    h2="Участники"
+    div
+        button
+            a(href="/api") Назад
+    div
+        table
+            tr
+                th Имя
+                th Кэш $
+            each  el in participants
+                tr(id = el.id)
+                    td #{el.name}
+                    td #{el.cashReserve}
+                    td
+                        button.edit(idToChange=el.id) Редактировать
+                    td
+                        button.deletion(id=el.id) Удалить
+    div
+        button.add(onclick="location.href='#addModal'") Add a participant
+    div.modal(id="addModal")
+        div#window
+            a(href="#close" title="Close" class="close") X
+            form
+                table
+                    tr
+                        th Имя
+                        th Кэш $
+                    tr
+                        td
+                            input#name(required name="name" type="text")
+                        td
+                            input#cashReserve(required name="cashReserve" type="number")
+                button#add(type="submit") Add
+    script
+        include ../public/js/participant.js

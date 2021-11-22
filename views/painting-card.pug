@@ -1,0 +1,26 @@
+extends base
+
+block content
+    style
+        include ../public/stylesheets/styles.css
+    h2="Информация о представленной картине"
+    div
+        button
+            a(href = "/api") Назад
+    div
+        form
+            p Название:
+                br
+                input#title(value=el.title name="title" type="text" disabled)
+            p Автор:
+                br
+                input#author(value=el.author name="author" type="text" disabled)
+            p Цена
+                br
+                input#startPrice(value=el.startPrice name="startPrice" type="number" disabled)
+            div
+                button.button#edit Редактировать
+                button.button#cancel(hidden=true) Отмена
+                button.button#save(hidden=true chID=el.id) Сохранить
+    script
+        include ../public/js/painting.js

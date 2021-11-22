@@ -1,0 +1,38 @@
+extends base
+
+block content
+    style
+        include ../public/stylesheets/modal.css
+        include ../public/stylesheets/styles.css
+    h2= "Насройки"
+    div
+        button
+            a(href = "/api/") Назад
+    div(class="card")
+        div(class="container")
+            p Start date: #{el.dateTime}
+            p Start time #{el.timeout}
+            p Auction time #{el.countingTime}
+            P Pause date #{el.pause}
+    div
+        button.add(onclick="location.href='#addModal'") Edit
+    div.modal(id="addModal")
+        div#window
+            a(href="#close" title="Close" class="close") X
+            form(class="form")
+                table
+                    p Дата начала:
+                        br
+                        input#dateTime(required name="dateTime" type="date")
+                    p Время начала:
+                        br
+                        input#timeout(required name="timeout" type="time")
+                    p Время аукциона:
+                        br
+                        input#countingTime(required name="countingTime" type="time")
+                    p Время паузы:
+                        br
+                        input#pause(required name="pause" type="time")
+                button#edit(type="submit") Edit
+    script
+        include ../public/js/settings.js

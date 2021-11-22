@@ -1,0 +1,43 @@
+extends base
+block content
+    style
+        include ../public/stylesheets/modal.css
+        include ../public/stylesheets/styles.css
+    h1="Аукцион"
+    div
+        form(action="/api/participants" method="GET")
+            button Участники
+        form(action="/api/settings" method="GET")
+            button Настройки
+    div
+        h1 Представленные картины
+        br
+        form
+            each el in paintings
+                div(class="card")
+                    div(class="container")
+                        p
+                            a(href = "/api/get/" + el.id) #{el.title}
+                        p
+                            span #{el.author}
+                        p
+                            span #{el.startPrice}
+                    img.current_picture(src=el.imgURL style="width: 100%")
+                hr(class="dashed")
+
+            //div
+            //    table
+            //        tr
+            //            th #
+            //            th Title
+            //            th Author
+            //            th Price
+            //            th
+            //        each el in paintings
+            //            tr(id = el.id)
+            //                td
+            //                    a(href = "/api/get/" + el.id) #{el.title}
+            //                td #{el.author}
+            //                td #{el.startPrice}
+            //                td
+            //                    button.deletion(id="delete #" + el.id) Delete

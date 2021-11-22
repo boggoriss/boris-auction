@@ -1,0 +1,37 @@
+{
+  "name": "auction-super-kek-lol-boris",
+  "version": "1.0.2",
+  "description": "auction of paintings",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "start": "node index.js",
+    "serve": "nodemon index.js"
+  },
+  "author": "the Boris.",
+  "type": "module",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "babel": "^6.23.0",
+    "body-parser": "^1.19.0",
+    "del": "^6.0.0",
+    "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-less": "^5.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp3": "^1.0.0",
+    "gulp4": "^4.0.2",
+    "https": "^1.0.0",
+    "jquery": "^3.6.0",
+    "less": "^4.1.2",
+    "moment": "^2.29.1",
+    "nodemon": "^2.0.15",
+    "pug": "^3.0.2",
+    "uuid": "^8.3.2",
+    "webpack": "^5.64.2"
+  }
+}
